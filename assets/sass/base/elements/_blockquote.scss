@@ -1,0 +1,16 @@
+
+blockquote {
+  @include font-size($blockquote_font_size);
+  font-style: italic;
+  font-weight: $blockquote_font_weight;
+  line-height: 2;
+  margin: $paragraph_margin 0;
+}
+
+blockquote p:last-of-type {
+    margin: 0;
+}
+
+blockquote::before {
+  display: none;
+}

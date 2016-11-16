@@ -1,0 +1,68 @@
+
+// Initial Colors
+$white: #fff;
+$black: #000;
+
+// Main Colors
+// ==============================
+$main_color: #263238;
+$secondary_color: #37474f;
+$alternate_color: #546e7a;
+$accent_color: #0091ea;
+$accent_light_color: #00b0ff;
+$subtle_color: #efeff1;
+
+// BG Colors
+$header_bg_color: $white;
+$body_bg_color: $white;
+$entry_bg_color: $white;
+
+// Text Colors
+// ====================================
+$font_color: $main_color;
+$title_color: $main_color;
+
+// Content Colors
+$content_links_color: $accent_color;
+$content_links_hover_color: $accent_light_color;
+
+$content_font_color: $font_color;
+$content_title_color: $title_color;
+
+// Button Colors
+$button_text_color: $white;
+$button_text_hover_color: $white;
+$button_bg_color: $accent_color;
+$button_bg_hover_color: $accent_light_color;
+
+// Nav Colors
+$nav_bg_color: $main_color;
+$nav_link_color: $white;
+$nav_hover_color: $accent_color;
+
+$primarynav_bg_color: $secondary_color;
+$primarynav_link_color: $white;
+$primarynav_hover_color: $accent_color;
+
+$secondarynav_bg_color: $alternate_color;
+$secondarynav_link_color: $white;
+$secondarynav_hover_color: $accent_color;
+
+// Footer Colors
+// ==========================================
+$extrafooter_bg_color: $secondary_color;
+$extrafooter_text_color: $white;
+
+$footerwidgets_bg_color: $main_color;
+$footerwidgets_text_color: $subtle_color;
+$footerwidgets_title_color: $footerwidgets_text_color;
+$footerwidgets_link_color: $accent_color;
+$footerwidgets_hover_color: $accent_light_color;
+
+$sitefooter_bg_color: $main_color;
+$sitefooter_text_color: $subtle_color;
+$sitefooter_link_color: $subtle_color;
+$sitefooter_hover_color: $subtle_color;
+
+
+

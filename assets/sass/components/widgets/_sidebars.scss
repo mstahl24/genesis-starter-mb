@@ -1,0 +1,26 @@
+/* # Sidebars
+---------------------------------------------------------------------------------------------------- */
+.sidebar {
+  @include font-size($sidebar_font_size);
+}
+
+.sidebar li {
+  border-bottom: 1px dotted $subtle_color;
+  margin-bottom: 6px;
+  padding-bottom: 6px; 
+}
+
+.sidebar p:last-child,
+.sidebar ul > li:last-child {
+  margin-bottom: 0; 
+}
+
+.sidebar .widget {
+  background-color: $white;
+  margin-bottom: 40px;
+  padding: 0;
+
+  @include media($small-screen-up) {
+     padding: 20px; 
+  }
+}

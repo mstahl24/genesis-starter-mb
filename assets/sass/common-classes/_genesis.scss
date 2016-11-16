@@ -1,0 +1,22 @@
+/* ## Genesis
+--------------------------------------------- */
+
+.archive-description,
+.author-box {
+  background-color: $white;
+  @include font-size($base_font_size)
+  margin-bottom: 40px;
+  
+  @include media($small-screen-up) {
+      padding: 20px; 
+  }
+}
+
+.author-box-title {
+  @include font-size($h5_font_size);
+  font-weight: $bold_font_weight;
+  margin-bottom: 4px; }
+
+.archive-description p:last-of-type,
+.author-box p:last-of-type {
+  margin-bottom: 0; }

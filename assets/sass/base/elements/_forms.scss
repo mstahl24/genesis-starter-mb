@@ -1,0 +1,33 @@
+/* ## Forms
+--------------------------------------------- */
+input,
+select,
+textarea {
+  background-color: $white;
+  border: 1px solid $subtle_color;
+  border-radius: 2px;
+  color: $font_color;
+  @include font-size($base_font_size);
+  font-weight: $base_font_weight;
+  margin-bottom: 6px;
+  padding: 10px 14px;
+  width: 100%; }
+
+input:focus,
+textarea:focus {
+  border: 1px solid $accent_color;
+  outline: none; }
+
+input[type="checkbox"],
+input[type="image"],
+input[type="radio"] {
+  width: auto; }
+
+::-moz-placeholder {
+  color: $alternate_color;
+  font-weight: $base_font_weight;
+  opacity: 1; }
+
+::-webkit-input-placeholder {
+  color: $alternate_color;
+  font-weight: $base_font_weight; }

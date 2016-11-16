@@ -1,0 +1,42 @@
+//
+// Widths
+//==================================
+
+$max-width: 1200px;
+
+$logo_width: 50%;
+
+$logo_height: 100px;
+
+$paragraph_margin: 28px;
+
+$stripe_padding: 40px 28px;
+
+$hero_img_height: 400px;
+
+$hero_img_height_mobile: 200px;
+
+$hero_padding: 60px 2px;
+
+$hero_padding_mobile: 20px 0;
+
+
+// Columns
+$one_half: 48.717948717948715%;
+$one_third: 31.623931623931625%;
+$one_fourth: 23.076923076923077%;
+$one_sixth: 14.52991452991453%;
+$two_thirds: 65.81196581196582%;
+$three_fourths: 74.35897435897436%;
+$five_sixths: 82.90598290598291%;
+
+$column_margin_left: 2.564102564102564%;
+
+$footer_column_width: $one_third; // Set depending on how many footer widgets are being used
+
+
+// Navigation
+$nav_item_padding: 17px 24px;
+$nav_sub_item_padding: 10px 24px;
+$secondary_nav_item_padding: 12px 24px;
+$secondary_nav_sub_item_padding: $nav_sub_item_padding;

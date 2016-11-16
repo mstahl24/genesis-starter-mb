@@ -1,0 +1,21 @@
+/* ## Site Containers
+--------------------------------------------- */
+.site-inner,
+.wrap {
+    margin: 0 auto;
+    max-width: 100%; 
+    padding-left: 2%;
+    padding-right: 2%;
+
+    @include media($large-screen-up) {
+        max-width: 1200px; 
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
+
+.site-inner {
+    clear: both;
+    padding-top: 40px; 
+}

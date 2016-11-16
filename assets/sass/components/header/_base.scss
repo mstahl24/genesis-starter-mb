@@ -1,0 +1,16 @@
+/* # Site Header
+---------------------------------------------------------------------------------------------------- */
+.site-header {
+  background-color: $header_bg_color;
+}
+
+.site-header .wrap {
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 14px 2%; 
+
+  @include media($large-screen-up) {
+    padding: 40px 0; 
+  }
+}

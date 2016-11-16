@@ -1,0 +1,13 @@
+/* ## Site Header Navigation
+--------------------------------------------- */
+.site-header .sub-menu {
+  border-top: 1px solid $subtle-color; 
+}
+
+.site-header .sub-menu .sub-menu {
+  margin-top: -56px; 
+}
+
+.site-header .genesis-nav-menu li li {
+  margin-left: 0; 
+}

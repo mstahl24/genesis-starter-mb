@@ -1,0 +1,37 @@
+/* ## Entries
+--------------------------------------------- */
+.entry {
+    padding: 20px;
+
+    @include media($small-screen-up) {
+        margin-bottom: 60px;
+    }
+}
+
+.content .entry {
+    background-color: $entry_bg_color; 
+}
+
+.entry-content ol,
+.entry-content ul {
+    margin-bottom: $paragraph_margin;
+    margin-left: 40px; 
+}
+
+.entry-content ol > li {
+    list-style-type: decimal; 
+}
+
+.entry-content ul > li {
+    list-style-type: disc; 
+}
+
+.entry-content ol ol,
+.entry-content ul ul {
+    margin-bottom: 0; 
+}
+
+.entry-content code {
+    background-color: #333;
+    color: #ddd; 
+}

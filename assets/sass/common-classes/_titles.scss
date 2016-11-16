@@ -1,0 +1,38 @@
+/* ## Titles
+--------------------------------------------- */
+.archive-title {
+  @include font-size($h1_font_size);
+  @include media($small-screen-up) {
+      @include font-size($h1_large_font_size);
+  }
+}
+
+.entry-title {
+  @include font-size($h1_font_size);
+  @include media($small-screen-up) {
+      @include font-size($h1_large_font_size);
+  }
+}
+
+h2.entry-title {
+    @include font-size($h2_font_size);
+}
+
+.entry-title a,
+.sidebar .widget-title a {
+  color: $content_links_color; 
+}
+
+.entry-title a:hover,
+.entry-title a:focus {
+  color: $content_links_hover_color; 
+}
+
+.widget-title {
+  @include font-size($widget_title_size);
+  margin-bottom: 20px; 
+}
+
+.footer-widgets .widget-title {
+  color: $footerwidgets_title_color; 
+}

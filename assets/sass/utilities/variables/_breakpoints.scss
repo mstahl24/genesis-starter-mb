@@ -1,0 +1,20 @@
+//
+// Breakpoints
+//===================================
+
+$large-desktop: 1680px;
+$desktop: 1360px;
+$tablet-landscape: 1024px;
+$tablet-portrait: 800px;
+$phone-landscape: 640px;
+$phone-portrait: 360px;
+
+// Global Breakpoints
+//------------------------------------------------------------------------------
+
+$smallest-screen-up: new-breakpoint(min-width $phone-portrait);
+$smaller-screen-up: new-breakpoint(min-width $phone-landscape);
+$small-screen-up: new-breakpoint(min-width $tablet-portrait);
+$medium-screen-up: new-breakpoint(min-width $tablet-landscape);
+$large-screen-up: new-breakpoint(min-width $desktop);
+$largest-screen-up: new-breakpoint(min-width $large-desktop);

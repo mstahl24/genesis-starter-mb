@@ -1,0 +1,36 @@
+{
+  "name": "developer",
+  "version": "1.0.0",
+  "description": "A starter development theme for Mockingbird websites - Genesis child theme.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mstahl24/genesis-starter-with-acf.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mstahl24",
+  "license": "MIT",
+    "bugs": {
+    "url": "https://github.com/mstahl24/genesis-starter-with-acf/issues"
+  },
+  "homepage": "https://github.com/mstahl24/genesis-starter-with-acf#readme",
+  "devDependencies": {
+    "bourbon": "^4.2.6",
+    "bourbon-neat": "^1.7.2",
+    "css-mqpacker": "^5.0.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sass-lint": "^1.2.0",
+    "gulp-sourcemaps": "^2.1.1",
+    "gulp-uglify": "^2.0.0",
+    "sass-module-importer": "^1.2.1"
+  }
+}
