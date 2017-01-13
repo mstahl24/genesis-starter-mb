@@ -1,10 +1,10 @@
 /* ## Entries
 --------------------------------------------- */
 .entry {
-    padding: 20px;
-
+    padding: 5px;
+    margin-bottom: 50px;
     @include media($small-screen-up) {
-        margin-bottom: 60px;
+        padding: 20px;
     }
 }
 

@@ -10,6 +10,9 @@ body {
   color: $font_color;
   font-family: $base_font;
   @include font-size($base_font_size);
+  @include media($small-screen-up) {
+      @include font-size($base_large_font_size);
+  }
   font-weight: $base_font_weight;
   line-height: $base_line_height;
   margin: 0; 

@@ -59,4 +59,7 @@ li.comment {
 .form-allowed-tags {
   background-color: #f5f5f5;
   @include font-size($base_font_size);
+  @include media($small-screen-up) {
+      @include font-size($base_large_font_size);
+  }
   padding: 24px; }

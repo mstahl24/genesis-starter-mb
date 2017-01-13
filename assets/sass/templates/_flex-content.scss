@@ -11,6 +11,10 @@
     padding: 0; 
 }
 
+.full h1::after {
+    margin: 0 auto;
+}
+
 .head-margin {
     margin-top: 40px;
 }
@@ -36,7 +40,10 @@
 
 /* Flex Layout */
 .stripe {
-    padding: $stripe_padding;
+    padding: $stripe_padding_mobile;
+    @include media($small-screen-up) {
+      padding: $stripe_padding;
+  }
 }
 
 .flex-plain {

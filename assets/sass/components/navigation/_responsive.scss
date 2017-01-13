@@ -13,7 +13,7 @@
     font-family: FontAwesome;
     content: "\f0c9";
     font-size: 28px;
-    color: $white; 
+    color: $reponsivenav_link_color; 
 }
 
 .responsive-menu-icon:after {
@@ -21,7 +21,7 @@
     margin-left: 8px;
     font-size: 15px;
     font-size: 1.5rem;
-    color: $white;
+    color: $reponsivenav_link_color;
     position: relative;
     top: -4px; 
 }
@@ -42,7 +42,7 @@
 
     .genesis-nav-menu.responsive-menu .menu-item {
         margin: 0;
-        border-top: 1px solid $white;
+        border-top: 1px solid $reponsivenav_link_color;
     }
 
     .genesis-nav-menu.responsive-menu .menu-item:hover {
@@ -61,7 +61,7 @@
     .nav-primary .genesis-nav-menu.responsive-menu .sub-menu .current-menu-item > a:hover,
     .nav-primary .genesis-nav-menu.responsive-menu a,
     .nav-primary .genesis-nav-menu.responsive-menu a:hover {
-        color: $white; 
+        color: $reponsivenav_link_color; 
     }
 
     .genesis-nav-menu.responsive-menu .menu-item-has-children {
@@ -76,7 +76,7 @@
         font-family: FontAwesome;
         content: "\f107";
         font-weight: 400;
-        color: $white;
+        color: $reponsivenav_link_color;
         text-align: right;
         font-size: 30px;
         padding: 10px;
@@ -95,7 +95,7 @@
         font-family: FontAwesome;
         content: "\f106";
         font-weight: 400;
-        color: $white;
+        color: $reponsivenav_link_color;
         text-align: right;
         font-size: 30px;
         padding: 10px;

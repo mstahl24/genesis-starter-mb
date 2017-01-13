@@ -25,6 +25,9 @@ h1 {
 h2 {
   font-family: $h2_font;
   @include font-size($h2_font_size);
+  @include media($small-screen-up) {
+      @include font-size($h2_large_font_size);
+  }
   font-weight: $h2_font_weight;
   text-transform: $h2_text_transform;
 }

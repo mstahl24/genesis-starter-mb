@@ -12,7 +12,7 @@
 namespace Mockingbird\Developers;
 
 
-add_action('genesis_setup', __NAMESPACE__ . '\setup_child_theme');
+add_action('genesis_setup', __NAMESPACE__. '\setup_child_theme');
 /**
  * Setup child theme.
  * 

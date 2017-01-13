@@ -16,6 +16,9 @@
 
 h2.entry-title {
     @include font-size($h2_font_size);
+    @include media($small-screen-up) {
+      @include font-size($h2_large_font_size);
+  }
 }
 
 .entry-title a,

@@ -5,6 +5,9 @@
   clear: both;
   padding-top: 40px; 
   @include font-size($footer_widgets_font_size);
+  @include media($small-screen-up) {
+    @include font-size($footer_widgets_large_font_size);
+  }
 }
 
 .footer-widgets {

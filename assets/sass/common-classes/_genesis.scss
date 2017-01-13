@@ -3,13 +3,8 @@
 
 .archive-description,
 .author-box {
-  background-color: $white;
   @include font-size($base_font_size)
   margin-bottom: 40px;
-  
-  @include media($small-screen-up) {
-      padding: 20px; 
-  }
 }
 
 .author-box-title {

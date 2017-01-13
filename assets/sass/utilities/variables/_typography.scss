@@ -1,7 +1,8 @@
 
 // Base Typography
 $base_font: 'Open Sans', Arial, sans-serif;
-$base_font_size: 16;
+$base_font_size: 14;
+$base_large_font_size: 16;
 $base_font_weight: 400;
 $base_line_height: 1.625;
 
@@ -11,14 +12,15 @@ $bold_font_weight: 700;
 // Titles
 $title_font: 'Roboto Condensed', Helvetica, Arial, sans-serif;
 $title_weight: 700;
-$title_text_transform: uppercase;
+$title_text_transform: initial;
 
 $widget_title_size: 18;
 
-$h1_font_size: 36;
-$h1_large_font_size: 44;
+$h1_font_size: 30;
+$h1_large_font_size: 40;
 
-$h2_font_size: 30;
+$h2_font_size: 24;
+$h2_large_font_size: 30;
 $h2_font: 'Martel', Times New Roman, Georgia, serif;
 $h2_font_weight: 200;
 $h2_text_transform: none;
@@ -62,5 +64,6 @@ $button_font_weight: 400;
 $button_text_transform: none;
 
 // Footer
-$footer_widgets_font_size: 14;
+$footer_widgets_font_size: 13;
+$footer_widgets_large_font_size: 14;
 $sitefooter_font_size: 12;

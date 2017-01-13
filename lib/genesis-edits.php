@@ -50,3 +50,29 @@ if ( !is_page() ) {
 	$post_meta = '[post_categories before="Categories: "] [post_tags before="Tags: "]';
 	return $post_meta;
 }}
+
+
+//* Add standard content editor back to posts page
+add_action( 'edit_form_after_title', __NAMESPACE__. '\add_posts_page_edit_form' );
+function add_posts_page_edit_form( $post ) {
+	$posts_page = get_option( 'page_for_posts' );
+	if ( $posts_page === $post->ID ) {
+		add_post_type_support( 'page', 'editor' );
+	}
+}
+
+/**
+ * Remove Genesis Page Templates
+ *
+ * @author Bill Erickson
+ * @link http://www.billerickson.net/remove-genesis-page-templates
+ *
+ * @param array $page_templates
+ * @return array
+ */
+function be_remove_genesis_page_templates( $page_templates ) {
+	unset( $page_templates['page_archive.php'] );
+	unset( $page_templates['page_blog.php'] );
+	return $page_templates;
+}
+add_filter( 'theme_page_templates', __NAMESPACE__. '\be_remove_genesis_page_templates' );
