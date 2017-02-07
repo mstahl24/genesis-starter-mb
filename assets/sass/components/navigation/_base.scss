@@ -1,6 +1,7 @@
 
 .genesis-nav-menu {
     clear: both;
+    font-family: $nav_font;
     @include font-size($nav_font_size);
     line-height: 1;
     width: 100%; 

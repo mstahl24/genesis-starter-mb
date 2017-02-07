@@ -29,6 +29,7 @@
 /* # Responsive Menu Media Query
 ---------------------------------------------------------------------------------------------------- */
 @media screen and (max-width: $tablet-landscape) {
+    .genesis-nav-menu,
     .genesis-nav-menu.responsive-menu > .menu-item > .sub-menu,
     .genesis-nav-menu.responsive-menu,
     .genesis-nav-menu.responsive-menu > .menu-item-has-children > a:after {
@@ -88,7 +89,7 @@
     }
 
     .nav-primary .genesis-nav-menu.responsive-menu > .menu-item-has-children:before {
-        color: #fff; 
+        color: $reponsivenav_link_color; 
     }
 
     .genesis-nav-menu.responsive-menu .menu-open.menu-item-has-children:before {

@@ -8,7 +8,6 @@
  * @link http://mockingbird.marketing/
  * @license The MIT License (MIT)
  */
-namespace Mockingbird\Developers;
 
 
 //* Initialize our theme framework

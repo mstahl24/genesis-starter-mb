@@ -3,12 +3,11 @@
  * Blog Intro
  *
  */
-namespace Mockingbird\Developers;
 
 
-add_action('genesis_before_loop', __NAMESPACE__. '\add_blog_intro');
+add_action('genesis_before_loop', 'mbird_add_blog_intro');
 
-function add_blog_intro() {
+function mbird_add_blog_intro() {
     $posts_page = get_option('page_for_posts');
     if (is_null($posts_page)) {
         return;

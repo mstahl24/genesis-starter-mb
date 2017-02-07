@@ -9,10 +9,9 @@
  * @link http://mockingbird.marketing/
  * @license The MIT License (MIT)
  */
-namespace Mockingbird\Developers;
 
 
-add_action('genesis_setup', __NAMESPACE__. '\setup_child_theme');
+add_action('genesis_setup', 'mbird_setup_child_theme');
 /**
  * Setup child theme.
  * 
@@ -20,13 +19,13 @@ add_action('genesis_setup', __NAMESPACE__. '\setup_child_theme');
  * 
  * @reutrn void
  */
-function setup_child_theme() {
+function mbird_setup_child_theme() {
 
-    add_theme_supports();
+    mbird_add_theme_supports();
     
-    custom_clean_head();
+    mbird_custom_clean_head();
     
-    // adds_new_image_sizes();
+    // mbird_adds_new_image_sizes();
 
 }
 
@@ -37,7 +36,7 @@ function setup_child_theme() {
  * 
  * @return void
  */
-function custom_clean_head() {
+function mbird_custom_clean_head() {
     remove_action('wp_head', 'wp_generator');
     remove_action('wp_head', 'wlwmanifest_link');
     remove_action('wp_head', 'rsd_link');
@@ -56,7 +55,7 @@ function custom_clean_head() {
  * 
  * @return void
  */
-function add_theme_supports() {
+function mbird_add_theme_supports() {
 
     $config = array(
         'html5' => array(
@@ -91,7 +90,7 @@ function add_theme_supports() {
  * 
  * @return void
  */
-// function adds_new_image_sizes() {
+// function mbird_adds_new_image_sizes() {
 
 //     $config = array(
 //        'featured-image' => array(
@@ -109,7 +108,7 @@ function add_theme_supports() {
 // }
 
 
-add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__. '\set_theme_settings_defaults' );
+add_filter( 'genesis_theme_settings_defaults', 'mbird_set_theme_settings_defaults' );
 /**
  * Set theme settings defaults
  * 
@@ -119,9 +118,9 @@ add_filter( 'genesis_theme_settings_defaults', __NAMESPACE__. '\set_theme_settin
  * 
  * @return array
  */
-function set_theme_settings_defaults( array $defaults ) {
+function mbird_set_theme_settings_defaults( array $defaults ) {
     
-    $config = get_theme_settings_defaults();
+    $config = mbird_get_theme_settings_defaults();
     
     $defaults = wp_parse_args( $config, $defaults );
     
@@ -129,7 +128,7 @@ function set_theme_settings_defaults( array $defaults ) {
 }
 
 
-add_action( 'after_switch_theme', __NAMESPACE__. '\update_theme_settings_defaults' );
+add_action( 'after_switch_theme', 'mbird_update_theme_settings_defaults' );
 /**
  * Updates the theme setting defaults.
  * 
@@ -137,9 +136,9 @@ add_action( 'after_switch_theme', __NAMESPACE__. '\update_theme_settings_default
  * 
  * @return void
  */
-function update_theme_settings_defaults() {
+function mbird_update_theme_settings_defaults() {
     
-    $config = get_theme_settings_defaults();
+    $config = mbird_get_theme_settings_defaults();
     
     if (function_exists('genesis_update_settings')) {
 
@@ -157,7 +156,7 @@ function update_theme_settings_defaults() {
  * 
  * @return array
  */
-function get_theme_settings_defaults() {
+function mbird_get_theme_settings_defaults() {
     
     return array(
         'blog_cat_num' => 10,

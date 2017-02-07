@@ -9,10 +9,8 @@
  * @link http://mockingbird.marketing/
  * @license The MIT License (MIT)
  */
-namespace Mockingbird\Developers;
 
-
-add_action('wp_enqueue_scripts', __NAMESPACE__. '\enqueue_assets');
+add_action('wp_enqueue_scripts', 'mbird_enqueue_assets');
 /**
  * Enqueue Scripts and Styles.
  * 
@@ -20,7 +18,7 @@ add_action('wp_enqueue_scripts', __NAMESPACE__. '\enqueue_assets');
  * 
  * @return void
  */
-function enqueue_assets() {
+function mbird_enqueue_assets() {
 
     // Google Fonts
     wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION);
@@ -33,7 +31,7 @@ function enqueue_assets() {
 }
 
 
-add_action( 'init', __NAMESPACE__. '\modify_jquery' );
+add_action( 'init', 'mbird_modify_jquery' );
 /**
  * Remove WP jQuery and replace with Google
  * 
@@ -41,7 +39,7 @@ add_action( 'init', __NAMESPACE__. '\modify_jquery' );
  * 
  * @return void
  */
-function modify_jquery() {
+function mbird_modify_jquery() {
     if ( !is_admin() ) {
         // comment out the next two lines to load the local copy of jQuery
         wp_deregister_script( 'jquery' );
@@ -51,7 +49,7 @@ function modify_jquery() {
 }
 
 
-add_action( 'wp_print_styles', __NAMESPACE__. '\deregister_styles', 100 );
+add_action( 'wp_print_styles', 'mbird_deregister_styles', 100 );
 /**
  * Remove plugin styles that are within our stylesheet.
  * 
@@ -59,12 +57,12 @@ add_action( 'wp_print_styles', __NAMESPACE__. '\deregister_styles', 100 );
  * 
  * @return void
  */
-function deregister_styles() {
+function mbird_deregister_styles() {
 	wp_deregister_style( 'contact-form-7' );
 }
 
 
-// add_filter( 'stylesheet_uri', __NAMESPACE__. '\load_minified_stylesheet', 10, 2 );
+// add_filter( 'stylesheet_uri', 'mbird_load_minified_stylesheet', 10, 2 );
 /**
  * Load minified stylesheet instead of regular
  * 
@@ -72,14 +70,14 @@ function deregister_styles() {
  * 
  * @return style.min.css
  */
-function load_minified_stylesheet( $stylesheet_uri, $stylesheet_dir_uri ) {
+function mbird_load_minified_stylesheet( $stylesheet_uri, $stylesheet_dir_uri ) {
     // Make sure this URI path is correct for your file
     return trailingslashit( $stylesheet_dir_uri ) . 'style.min.css';
 }
 
 
-add_filter( 'script_loader_src', __NAMESPACE__. '\remove_script_version', 15, 1 );
-add_filter( 'style_loader_src', __NAMESPACE__. '\remove_script_version', 15, 1 );
+add_filter( 'script_loader_src', 'mbird_remove_script_version', 15, 1 );
+add_filter( 'style_loader_src', 'mbird_remove_script_version', 15, 1 );
 /**
  * Remove Script Version
  * 
@@ -87,7 +85,7 @@ add_filter( 'style_loader_src', __NAMESPACE__. '\remove_script_version', 15, 1 )
  * 
  * @return without versions
  */
-function remove_script_version($src) {
+function mbird_remove_script_version($src) {
     $parts = explode('?ver', $src);
     return $parts[0];
 }

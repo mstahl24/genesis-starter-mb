@@ -9,7 +9,6 @@
  * @link http://mockingbird.marketing/
  * @license The MIT License (MIT)
  */
-namespace Mockingbird\Developers;
 
 /**
  * Initialize the theme's constants.
@@ -18,7 +17,7 @@ namespace Mockingbird\Developers;
  * 
  * @return void
  */
-function init_constants() {
+function mbird_init_constants() {
     
     $child_theme = wp_get_theme();
     
@@ -30,4 +29,4 @@ function init_constants() {
     define( 'CHILD_THEME_DIR', '/wp-content/themes/'. CHILD_TEXT_DOMAIN );
 }
 
-init_constants();
+mbird_init_constants();

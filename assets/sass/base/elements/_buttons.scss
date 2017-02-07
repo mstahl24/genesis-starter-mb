@@ -12,6 +12,7 @@ input[type="submit"],
   color: $button_text_color;
   cursor: pointer;
   @include font-size($button_font_size);
+  font-family: $button_font;
   font-weight: $button_font_weight;
   padding: 14px 30px;
   text-transform: $button_text_transform;

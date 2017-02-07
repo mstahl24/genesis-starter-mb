@@ -26,6 +26,7 @@ $h2_font_weight: 200;
 $h2_text_transform: none;
 
 $h3_font_size: 26;
+$h3_large_font_size: 26;
 
 $h4_font_size: 22;
 
@@ -48,6 +49,7 @@ $blockquote_font_weight: 300;
 // Navigation
 $nav_font: $base_font;
 $nav_font_size: 14;
+$nav_font_weight: $base_font_weight;
 $nav_submenu_font_size: 12;
 $primarynav_font: $base_font;
 $primarynav_font_size: $nav_font_size;

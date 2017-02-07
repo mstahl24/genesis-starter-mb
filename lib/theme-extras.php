@@ -9,8 +9,6 @@
  * @link http://mockingbird.marketing/
  * @license The MIT License (MIT)
  */
-namespace Mockingbird\Developers;
-
 
 
 // Add ACF Options Page for Theme Extra Content
@@ -27,7 +25,7 @@ if( function_exists('acf_add_options_page') ) {
 }
 
 
-add_action('genesis_before_footer', __NAMESPACE__. '\add_footer_badges_skip_home', 1);
+add_action('genesis_before_footer', 'mbird_add_footer_badges_skip_home', 1);
 /*
  * Add Badges Before Footer
  * 
@@ -35,15 +33,15 @@ add_action('genesis_before_footer', __NAMESPACE__. '\add_footer_badges_skip_home
  * 
  * @return void
  */
-function add_footer_badges_skip_home() {
+function mbird_add_footer_badges_skip_home() {
 
     if (!is_front_page()) {
 
-        add_footer_badges();
+        mbird_add_footer_badges();
         
     }
 }
-function add_footer_badges() {
+function mbird_add_footer_badges() {
 
     // check if the repeater field has rows of data
     if (have_rows('theme_badges', 'option')):
@@ -81,7 +79,7 @@ function add_footer_badges() {
     endif;
 }
 
-add_action('genesis_before_footer', __NAMESPACE__. '\add_extra_footer', 1);
+add_action('genesis_before_footer', 'mbird_add_extra_footer', 1);
 /*
  * Add extra footer
  * 
@@ -89,7 +87,7 @@ add_action('genesis_before_footer', __NAMESPACE__. '\add_extra_footer', 1);
  * 
  * @return void
  */
-function add_extra_footer() {
+function mbird_add_extra_footer() {
     
     if ( get_field('theme_footer_col1', 'option') ) {
 
@@ -112,7 +110,7 @@ function add_extra_footer() {
 
 }
 
-add_action('genesis_header_right', __NAMESPACE__. '\add_header_info');
+add_action('genesis_header_right', 'mbird_add_header_info');
 /*
  * Add header contact info
  * 
@@ -120,7 +118,7 @@ add_action('genesis_header_right', __NAMESPACE__. '\add_header_info');
  * 
  * @return void
  */
-function add_header_info() {
+function mbird_add_header_info() {
     
     if ( get_field('theme_phone', 'option') ) {
         echo '<div class="header-info"><div class="header-phone">';          
@@ -131,7 +129,7 @@ function add_header_info() {
 
 }
 
-add_action('wp_footer', __NAMESPACE__. '\add_extra_footer_scripts');
+add_action('wp_footer', 'mbird_add_extra_footer_scripts');
 /*
  * Output extra footer scripts
  * 
@@ -139,7 +137,7 @@ add_action('wp_footer', __NAMESPACE__. '\add_extra_footer_scripts');
  * 
  * @return void
  */
-function add_extra_footer_scripts() {
+function mbird_add_extra_footer_scripts() {
 
     if (get_field('theme_footer_scripts', 'option')) {
         the_field('theme_footer_scripts', 'option');
@@ -147,7 +145,7 @@ function add_extra_footer_scripts() {
 }
 
 
-add_shortcode( 'office-location', __NAMESPACE__. '\display_office_info_shortcode' );
+add_shortcode( 'office-location', 'mbird_display_office_info_shortcode' );
 /*
  * Add locations shortcode
  * 
@@ -155,7 +153,7 @@ add_shortcode( 'office-location', __NAMESPACE__. '\display_office_info_shortcode
  * 
  * @return location
  */
-function display_office_info_shortcode( $atts ) {
+function mbird_display_office_info_shortcode( $atts ) {
 
 	// Attributes
 	$atts = shortcode_atts(

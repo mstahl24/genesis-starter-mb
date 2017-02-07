@@ -1,0 +1,11 @@
+<?php
+/**
+ * Tag Template
+ *
+ */
+
+
+
+
+
+genesis();

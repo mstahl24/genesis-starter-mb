@@ -1,0 +1,11 @@
+<?php
+/**
+ * Category Template
+ *
+ */
+
+
+
+
+
+genesis();
