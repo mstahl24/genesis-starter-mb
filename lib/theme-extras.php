@@ -153,56 +153,123 @@ add_shortcode( 'office-location', 'mbird_display_office_info_shortcode' );
  * 
  * @return location
  */
+add_shortcode( 'office-location', 'mbird_display_office_info_shortcode' );
+/*
+ * Add locations shortcode
+ * 
+ * @since 1.0.0
+ * 
+ * @return location
+ */
 function mbird_display_office_info_shortcode( $atts ) {
 
-	// Attributes
-	$atts = shortcode_atts(
-		array(
-			'num' => '1',
-		),
-		$atts,
-		'office-location'
-	);
-        
+    // Attributes
+    $atts = shortcode_atts(
+        array(
+            'num' => '1',
+            'schema' => 'false'
+        ),
+        $atts,
+        'office-location'
+    );
+
         $loc_num = --$atts['num'];
         $rows = get_field( 'theme_locations', 'option' ); // get all the rows
         $selected_row = $rows[$loc_num]; // get the selected row
+
+        if ( $atts['schema'] = 'true' === $atts['schema'] ) {
+            $schema = 1;
+        }
         
         if ( $selected_row[ 'theme_loc_name' ] ) {
-            $loc_name = '<span class="loc-name">'. $selected_row[ 'theme_loc_name' ] .'</span><br />';
+            $loc_name = ''. $selected_row[ 'theme_loc_name' ] .'';
         }
         if ( $selected_row[ 'theme_loc_street' ] ) {
-            $loc_street = '<span class="loc-street">'. $selected_row[ 'theme_loc_street' ] .'</span><br />';
+            $loc_street = ''. $selected_row[ 'theme_loc_street' ] .'';
         }
         if ( $selected_row[ 'theme_loc_city' ] ) {
-            $loc_city = '<span class="loc-city">'. $selected_row[ 'theme_loc_city' ] .'</span>, ';
+            $loc_city = ''. $selected_row[ 'theme_loc_city' ] .'';
         }
         if ( $selected_row[ 'theme_loc_state' ] ) {
-            $loc_state = '<span class="loc-state">'. $selected_row[ 'theme_loc_state' ] .'</span>';
+            $loc_state = ''. $selected_row[ 'theme_loc_state' ] .'';
         }
         if ( $selected_row[ 'theme_loc_zip' ] ) {
-            $loc_zip = '<span class="loc-zip">'. $selected_row[ 'theme_loc_zip' ] .'</span><br />';
+            $loc_zip = ''. $selected_row[ 'theme_loc_zip' ] .'';
         }
         if ( $selected_row[ 'theme_loc_phone' ] ) {
-            $loc_phone = '<span class="loc-phone">Phone: '. $selected_row[ 'theme_loc_phone' ] .'</span><br />';
+            $loc_phone = ''. $selected_row[ 'theme_loc_phone' ] .'';
         }
         if ( $selected_row[ 'theme_loc_fax' ] ) {
-            $loc_fax = '<span class="loc-fax">Fax: '. $selected_row[ 'theme_loc_fax' ] .'</span><br />';
+            $loc_fax = ''. $selected_row[ 'theme_loc_fax' ] .'';
         }
         if ( $selected_row[ 'theme_loc_map' ] ) {
             $loc_map = '<span class="loc-map"><a href="'. $selected_row[ 'theme_loc_map' ] .'" target="_blank">Driving Directions</a></span>';
         }
 
-	// Return custom embed code
-	return '<p class="loc-display">
-                    '.$loc_name.'
-                    '.$loc_street.'
-                    '.$loc_city.'
-                    '.$loc_state.'
-                    '.$loc_zip.'
-                    '.$loc_phone.'
-                    '.$loc_fax.'
-                    '.$loc_map.'
-                </p>';
+    if ( $schema == 1 ) {
+        // Return custom embed code
+        return '<div itemscope itemtype="http://schema.org/LegalService" class="loc-schema">
+                    <img src="#" itemprop="image" alt="'.$loc_name.' logo" />
+                    <span itemprop="name">'.$loc_name.'</span>
+                    <div itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
+                        <p><span itemprop="streetAddress">'.$loc_street.'</span><br />
+                        <span itemprop="addressLocality">'.$loc_city.'</span>, <span itemprop="addressRegion">'.$loc_state.'</span> <span itemprop="postalCode">'.$loc_zip.'</span>
+                        </p>
+                    </div>
+                    <p>Tel: <span itemprop="telephone">'.$loc_phone.'</span><br />
+                    Fax: <span itemprop="faxNumber">'.$loc_fax.'</span><br />
+                        '.$loc_map.'
+                    </p>
+                </div>';
+    } else {
+        // Return custom embed code
+        return '<p class="loc-display">
+                        '.$loc_name.'<br />
+                        '.$loc_street.'<br />
+                        '.$loc_city.',
+                        '.$loc_state.'
+                        '.$loc_zip.'<br />
+                        Tel: '.$loc_phone.'<br />
+                        Fax: '.$loc_fax.'<br />
+                        '.$loc_map.'
+                    </p>';
+    }
+}
+
+add_shortcode( 'social-links', 'mbird_social_media_links_shortcode' );
+/*
+ * Add locations shortcode
+ * 
+ * @since 1.0.0
+ * 
+ * @return location
+ */
+function mbird_social_media_links_shortcode() {
+
+        
+        
+        if ( get_field( 'theme_facebook', 'option' ) ) {
+            $facebook_link = '<a href="'. get_field( 'theme_facebook', 'option' ) .'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
+        }
+        if ( get_field( 'theme_twitter', 'option' ) ) {
+            $twitter_link = '<a href="'. get_field( 'theme_twitter', 'option' ) .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+        }
+        if ( get_field( 'theme_linkedin', 'option' ) ) {
+            $linkedin_link = '<a href="'. get_field( 'theme_linkedin', 'option' ) .'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+        }
+        if ( get_field( 'theme_google', 'option' ) ) {
+            $googleplus_link = '<a href="'. get_field( 'theme_google', 'option' ) .'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>';
+        }
+        if ( get_field( 'theme_youtube', 'option' ) ) {
+            $youtube_link = '<a href="'. get_field( 'theme_youtube', 'option' ) .'" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>';
+        }
+
+        return '<p class="social-links">
+                    '.$facebook_link.'
+                    '.$twitter_link.'
+                    '.$linkedin_link.'
+                    '.$googleplus_link.'
+                    '.$youtube_link.'
+        </p>';
 
 }
