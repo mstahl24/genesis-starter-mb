@@ -74,7 +74,6 @@ function mbird_add_theme_supports() {
             'skip-links'
         ),
         'genesis-responsive-viewport' => null,
-        'genesis-after-entry-widget-area' => null,
         'genesis-footer-widgets' => 3,
     );
 

@@ -27,7 +27,7 @@ function mbird_enqueue_assets() {
     wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
     // Responsive Menu
-    wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_THEME_DIR . '/assets/js/responsive-menu.min.js', array('jquery'), CHILD_THEME_VERSION, true);
+    wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_THEME_DIR . '/assets/js/theme-scripts.min.js', array('jquery'), CHILD_THEME_VERSION, true);
 }
 
 

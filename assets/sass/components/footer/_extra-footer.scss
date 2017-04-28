@@ -9,7 +9,7 @@
     flex-wrap: wrap;
     
     @include media($medium-screen-up) {
-        flex-wrap: no-wrap;
+        flex-wrap: nowrap;
     }
     
 }

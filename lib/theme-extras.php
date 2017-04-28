@@ -43,40 +43,50 @@ function mbird_add_footer_badges_skip_home() {
 }
 function mbird_add_footer_badges() {
 
-    // check if the repeater field has rows of data
-    if (have_rows('theme_badges', 'option')):
 
-        echo '<div class="row"><div class="badge-wrap">';
+    if ( get_field('page_badge_bar_disable') ) {
 
-        // loop through the rows of data
-        while (have_rows('theme_badges', 'option')) : the_row();
+        // do nothing
 
-            echo '<div class="badge-img">';
+    } else {
 
-            $badge = get_sub_field('theme_badge_img', 'option');
-            $badgesize = 'medium'; // (thumbnail, medium, large, full or custom size)
+        // check if the repeater field has rows of data
+        if (have_rows('theme_badges', 'option')):
 
-            if (get_sub_field('theme_badge_link', 'option')) {
-                echo '<a href="' . get_sub_field('theme_badge_link', 'option') . '" target="_blank">';
-            }
+            echo '<div class="row"><div class="badge-wrap">';
 
-            echo wp_get_attachment_image($badge, $badgesize);
+            // loop through the rows of data
+            while (have_rows('theme_badges', 'option')) : the_row();
 
-            if (get_sub_field('theme_badge_link', 'option')) {
-                echo '</a>';
-            }
+                echo '<div class="badge-img">';
 
-            echo '</div>';
+                $badge = get_sub_field('theme_badge_img', 'option');
+                $badgesize = 'medium'; // (thumbnail, medium, large, full or custom size)
 
-        endwhile;
+                if (get_sub_field('theme_badge_link', 'option')) {
+                    echo '<a href="' . get_sub_field('theme_badge_link', 'option') . '" target="_blank">';
+                }
 
-        echo '</div></div>';
+                echo wp_get_attachment_image($badge, $badgesize);
 
-    else :
+                if (get_sub_field('theme_badge_link', 'option')) {
+                    echo '</a>';
+                }
 
-    // no rows found
+                echo '</div>';
 
-    endif;
+            endwhile;
+
+            echo '</div></div>';
+
+        else :
+
+        // no rows found
+
+        endif;
+
+    }
+    
 }
 
 add_action('genesis_before_footer', 'mbird_add_extra_footer', 1);
@@ -88,27 +98,39 @@ add_action('genesis_before_footer', 'mbird_add_extra_footer', 1);
  * @return void
  */
 function mbird_add_extra_footer() {
+
+    if ( get_field('page_extra_footer_disable') ) {
+
+        // do nothing
+
+    } else {
+
     
-    if ( get_field('theme_footer_col1', 'option') ) {
+        if ( get_field('theme_footer_col1', 'option') ) {
 
-        echo '<section class="row extra-footer"><div class = "wrap">';
+            echo '<section class="row extra-footer"><div class = "wrap">';
 
-        if ( get_field('theme_footer_columns', 'option') == '1' ) {
+            if ( get_field('theme_footer_columns', 'option') == '1' ) {
+                
+                echo '<div class="single-extra-footer centered">'.get_field('theme_footer_col1', 'option').'</div>';
             
-            echo '<div class="single-extra-footer centered">'.get_field('theme_footer_col1', 'option').'</div>';
+            } elseif ( get_field('theme_footer_columns', 'option') == '2' ) {
+                
+                echo '<div class="one-half first">'.get_field('theme_footer_col1', 'option').'</div>';
+                echo '<div class="one-half">'.get_field('theme_footer_col2', 'option').'</div>';
+                
+            }
+
+            echo '</div></section>';
         
-        } elseif ( get_field('theme_footer_columns', 'option') == '2' ) {
-            
-            echo '<div class="one-half first">'.get_field('theme_footer_col1', 'option').'</div>';
-            echo '<div class="one-half">'.get_field('theme_footer_col2', 'option').'</div>';
-            
         }
 
-        echo '</div></section>';
-    
     }
 
 }
+
+
+
 
 add_action('genesis_header_right', 'mbird_add_header_info');
 /*
@@ -145,14 +167,7 @@ function mbird_add_extra_footer_scripts() {
 }
 
 
-add_shortcode( 'office-location', 'mbird_display_office_info_shortcode' );
-/*
- * Add locations shortcode
- * 
- * @since 1.0.0
- * 
- * @return location
- */
+
 add_shortcode( 'office-location', 'mbird_display_office_info_shortcode' );
 /*
  * Add locations shortcode

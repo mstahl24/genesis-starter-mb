@@ -20,6 +20,9 @@ add_filter( 'edit_post_link', '__return_false' );
 //* Remove the header right widget area
 unregister_sidebar('header-right');
 
+//* Unregister secondary sidebar
+unregister_sidebar( 'sidebar-alt' );
+
 //* Unregister content/sidebar/sidebar layout setting
 genesis_unregister_layout('content-sidebar-sidebar');
 

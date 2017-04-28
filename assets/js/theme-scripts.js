@@ -1,3 +1,7 @@
+// RESPONSIVE NAVIGATION
+// ====================
+
+
 jQuery(function($) {
     $("header .genesis-nav-menu, .nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu").addClass("responsive-menu").before('<div class="responsive-menu-icon"></div>');
     $(".responsive-menu-icon").click(function() {

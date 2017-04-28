@@ -133,7 +133,7 @@ gulp.task('styles', ['sass:lint']);
 
 // Compress js with 'gulp compress-js'
 gulp.task('compress-js', function () {
-    return gulp.src('assets/js/responsive-menu.js')
+    return gulp.src('assets/js/theme-scripts.js')
     
         // Error handling
         .pipe(plumber({
@@ -142,7 +142,7 @@ gulp.task('compress-js', function () {
         
         .pipe(uglifyjs())
         
-        .pipe(rename('responsive-menu.min.js'))
+        .pipe(rename('theme-scripts.min.js'))
 
         .pipe(gulp.dest('assets/js/'))
         
