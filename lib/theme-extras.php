@@ -53,7 +53,7 @@ function mbird_add_footer_badges() {
         // check if the repeater field has rows of data
         if (have_rows('theme_badges', 'option')):
 
-            echo '<div class="row"><div class="badge-wrap">';
+            echo '<div class="row badge-bar"><div class="badge-wrap">';
 
             // loop through the rows of data
             while (have_rows('theme_badges', 'option')) : the_row();
@@ -194,60 +194,92 @@ function mbird_display_office_info_shortcode( $atts ) {
 
         if ( $atts['schema'] = 'true' === $atts['schema'] ) {
             $schema = 1;
+
+
+            if ( $selected_row[ 'theme_loc_name' ] ) {
+                $loc_name = ''. $selected_row[ 'theme_loc_name' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_street' ] ) {
+                $loc_street = ''. $selected_row[ 'theme_loc_street' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_city' ] ) {
+                $loc_city = ''. $selected_row[ 'theme_loc_city' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_state' ] ) {
+                $loc_state = ''. $selected_row[ 'theme_loc_state' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_zip' ] ) {
+                $loc_zip = ''. $selected_row[ 'theme_loc_zip' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_phone' ] ) {
+                $loc_phone = 'Tel: <span itemprop="telephone">'. $selected_row[ 'theme_loc_phone' ] .'</span><br />';
+            }
+            if ( $selected_row[ 'theme_loc_fax' ] ) {
+                $loc_fax = 'Fax: <span itemprop="faxNumber">'. $selected_row[ 'theme_loc_fax' ] .'</span><br /><br />';
+            }
+            if ( $selected_row[ 'theme_loc_map' ] ) {
+                $loc_map = '<span class="loc-map"><a href="'. $selected_row[ 'theme_loc_map' ] .'" target="_blank">Driving Directions</a></span>';
+            }
+
+        } else {
+
+            if ( $selected_row[ 'theme_loc_name' ] ) {
+                $loc_name = ''. $selected_row[ 'theme_loc_name' ] .'<br />';
+            }
+            if ( $selected_row[ 'theme_loc_street' ] ) {
+                $loc_street = ''. $selected_row[ 'theme_loc_street' ] .'<br />';
+            }
+            if ( $selected_row[ 'theme_loc_city' ] ) {
+                $loc_city = ''. $selected_row[ 'theme_loc_city' ] .',';
+            }
+            if ( $selected_row[ 'theme_loc_state' ] ) {
+                $loc_state = ''. $selected_row[ 'theme_loc_state' ] .'';
+            }
+            if ( $selected_row[ 'theme_loc_zip' ] ) {
+                $loc_zip = ''. $selected_row[ 'theme_loc_zip' ] .'<br />';
+            }
+            if ( $selected_row[ 'theme_loc_phone' ] ) {
+                $loc_phone = 'Tel: '. $selected_row[ 'theme_loc_phone' ] .'<br />';
+            }
+            if ( $selected_row[ 'theme_loc_fax' ] ) {
+                $loc_fax = 'Fax: '. $selected_row[ 'theme_loc_fax' ] .'<br />';
+            }
+            if ( $selected_row[ 'theme_loc_map' ] ) {
+                $loc_map = '<span class="loc-map"><a href="'. $selected_row[ 'theme_loc_map' ] .'" target="_blank">Driving Directions</a></span>';
+            }
+
         }
         
-        if ( $selected_row[ 'theme_loc_name' ] ) {
-            $loc_name = ''. $selected_row[ 'theme_loc_name' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_street' ] ) {
-            $loc_street = ''. $selected_row[ 'theme_loc_street' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_city' ] ) {
-            $loc_city = ''. $selected_row[ 'theme_loc_city' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_state' ] ) {
-            $loc_state = ''. $selected_row[ 'theme_loc_state' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_zip' ] ) {
-            $loc_zip = ''. $selected_row[ 'theme_loc_zip' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_phone' ] ) {
-            $loc_phone = ''. $selected_row[ 'theme_loc_phone' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_fax' ] ) {
-            $loc_fax = ''. $selected_row[ 'theme_loc_fax' ] .'';
-        }
-        if ( $selected_row[ 'theme_loc_map' ] ) {
-            $loc_map = '<span class="loc-map"><a href="'. $selected_row[ 'theme_loc_map' ] .'" target="_blank">Driving Directions</a></span>';
-        }
+        
 
     if ( $schema == 1 ) {
         // Return custom embed code
-        return '<div itemscope itemtype="http://schema.org/LegalService" class="loc-schema">
-                    <img src="#" itemprop="image" alt="'.$loc_name.' logo" />
-                    <span itemprop="name">'.$loc_name.'</span>
-                    <div itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
-                        <p><span itemprop="streetAddress">'.$loc_street.'</span><br />
-                        <span itemprop="addressLocality">'.$loc_city.'</span>, <span itemprop="addressRegion">'.$loc_state.'</span> <span itemprop="postalCode">'.$loc_zip.'</span>
-                        </p>
-                    </div>
-                    <p>Tel: <span itemprop="telephone">'.$loc_phone.'</span><br />
-                    Fax: <span itemprop="faxNumber">'.$loc_fax.'</span><br />
-                        '.$loc_map.'
-                    </p>
-                </div>';
+        return '
+        <div itemscope itemtype="http://schema.org/LegalService" class="loc-schema">
+            <img src="/wp-content/themes/assets/images/logo.png" itemprop="image" alt="'.$loc_name.' logo" />
+            <span itemprop="name">'.$loc_name.'</span>
+            <div itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
+                <p><span itemprop="streetAddress">'.$loc_street.'</span><br />
+                <span itemprop="addressLocality">'.$loc_city.'</span>, <span itemprop="addressRegion">'.$loc_state.'</span> <span itemprop="postalCode">'.$loc_zip.'</span>
+                </p>
+            </div>
+            '.$loc_phone.'
+            '.$loc_fax.'
+                '.$loc_map.'
+        </div>';
     } else {
         // Return custom embed code
-        return '<p class="loc-display">
-                        '.$loc_name.'<br />
-                        '.$loc_street.'<br />
-                        '.$loc_city.',
-                        '.$loc_state.'
-                        '.$loc_zip.'<br />
-                        Tel: '.$loc_phone.'<br />
-                        Fax: '.$loc_fax.'<br />
-                        '.$loc_map.'
-                    </p>';
+        return '
+        <p class="loc-display">
+            '.$loc_name.'
+            '.$loc_street.'
+            '.$loc_city.'
+            '.$loc_state.'
+            '.$loc_zip.'
+            '.$loc_phone.'
+            '.$loc_fax.'
+            '.$loc_map.'
+        </p>';
     }
 }
 

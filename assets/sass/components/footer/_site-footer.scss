@@ -1,21 +1,29 @@
 /* # Site Footer
 ---------------------------------------------------------------------------------------------------- */
 .site-footer {
-  background-color: $sitefooter_bg_color;
-  color: $sitefooter_text_color;
-  @include font-size($sitefooter_font_size);
-  line-height: 1.5;
-  padding: 20px 0;
-  text-align: center; }
+	background-color: $sitefooter_bg_color;
+	color: $sitefooter_text_color;
+	@include font-size($sitefooter_font_size);
+	line-height: 1.5;
+	padding: 20px 0;
+	text-align: center; }
 
 .site-footer a {
-  color: $sitefooter_link_color;
+	color: $sitefooter_link_color;
 }
 
 .site-footer a:hover {
-  color: $sitefooter_hover_color; 
+	color: $sitefooter_hover_color; 
 }
 
 .site-footer p {
-  margin-bottom: 0; 
+	margin-bottom: 0; 
+}
+
+#sitemap_authors {
+	display: none;
+}
+
+.loc-schema img {
+	display: none;
 }
