@@ -28,6 +28,11 @@ function mbird_enqueue_assets() {
 
 	// Responsive Menu
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_THEME_DIR . '/assets/js/theme-scripts.min.js', array('jquery'), CHILD_THEME_VERSION, true);
+
+	if ( get_field('theme_sticky_header', 'option') ) {
+		// Sticky Header
+    	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-sticky-header', CHILD_THEME_DIR . '/assets/js/sticky-header.min.js', array('jquery'), CHILD_THEME_VERSION, true);
+    }
 }
 
 

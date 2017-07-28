@@ -149,4 +149,25 @@ gulp.task('compress-js', function () {
 		.pipe(notify({
 			message: 'JS is compressed.'
 		}));
+
+});
+
+// Compress js with 'gulp compress-js'
+gulp.task('compress-sticky-js', function () {
+	return gulp.src('assets/js/sticky-header.js')
+	
+		// Error handling
+		.pipe(plumber({
+			errorHandler: handleErrors
+		}))
+		
+		.pipe(uglifyjs())
+		
+		.pipe(rename('sticky-header.min.js'))
+
+		.pipe(gulp.dest('assets/js/'))
+		
+		.pipe(notify({
+			message: 'JS is compressed.'
+		}));
 });

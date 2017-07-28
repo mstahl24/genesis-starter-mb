@@ -31,7 +31,7 @@ function mbird_home_content_insert() {
 	$page_content = get_the_content();
 
 	if( $page_content ) {
-		echo '<div class="row home-standard-content"><div class="wrap">'.$page_content.'</div></div>';
+		echo '<div class="row row-pad"><div class="wrap">'.$page_content.'</div></div>';
 	}
 
 }

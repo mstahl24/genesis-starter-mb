@@ -10,11 +10,15 @@
 	margin-bottom: 0;
 }
 
-.homepage .extra-footer {
-	margin-top: 60px;
-}
-
 .skinny {
 	margin: 0 auto;
 	max-width: 720px;
+}
+
+.row-pad {
+	padding: 50px 0;
+
+	@include media($medium-screen-up) {
+		padding: 90px 0;
+	}
 }

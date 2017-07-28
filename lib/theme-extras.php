@@ -24,6 +24,20 @@ if( function_exists('acf_add_options_page') ) {
 	
 }
 
+if ( get_field('theme_sticky_header', 'option') ) {
+	//* Add sticky wrap before header
+	add_action( 'genesis_before_header', 'mbird_add_header_sticky_wrap_open', 1 );
+	function mbird_add_header_sticky_wrap_open() {
+		echo '<div class="sticky-header">';
+	}
+
+	//* Add sticky wrap close after header
+	add_action( 'genesis_after_header', 'mbird_add_header_sticky_wrap_close', 15 );
+	function mbird_add_header_sticky_wrap_close() {
+		echo '</div>';
+	}
+}
+
 
 add_action('genesis_before_footer', 'mbird_add_footer_badges_skip_home', 1);
 /*

@@ -8,10 +8,26 @@
 	padding: 14px $wrap_side_padding_mobile; 
 
 	@include media($medium-screen-up) {
-	padding: 20px $wrap_side_padding; 
+		padding: 20px $wrap_side_padding; 
 	}
 
 	@include media($large-screen-up) {
-	padding: 40px 0; 
+		padding: 40px 0; 
+	}
+}
+
+
+.sticky-header {
+	width: 100%;
+	z-index: 99999;
+}
+
+.scrolled.sticky-header .site-header .wrap {
+	
+	@include media($medium-screen-up) {
+		padding: 10px $wrap_side_padding;
+	}
+	@include media($large-screen-up) {
+		padding: 10px 0; 
 	}
 }
