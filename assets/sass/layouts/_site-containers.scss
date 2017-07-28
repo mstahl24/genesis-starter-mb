@@ -2,23 +2,28 @@
 --------------------------------------------- */
 .site-inner,
 .wrap {
-    margin: 0 auto;
-    max-width: 100%; 
-    padding-left: 2%;
-    padding-right: 2%;
+	margin: 0 auto;
+	max-width: 100%; 
+	padding-left: $wrap_side_padding_mobile;
+	padding-right: $wrap_side_padding_mobile;
 
-    @include media($large-screen-up) {
-        max-width: 1200px; 
-        padding-left: 0;
-        padding-right: 0;
-    }
+	@include media($medium-screen-up) {
+		padding-left: $wrap_side_padding;
+		padding-right: $wrap_side_padding;
+	}
+
+	@include media($large-screen-up) {
+		max-width: 1200px; 
+		padding-left: 0;
+		padding-right: 0;
+	}
 
 }
 
 .site-inner {
-    clear: both;
-    padding-top: 10px;
-    @include media($small-screen-up) {
-        padding-top: 30px;
-    }
+	clear: both;
+	padding-top: 10px;
+	@include media($small-screen-up) {
+		padding-top: 30px;
+	}
 }

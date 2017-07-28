@@ -1,37 +1,37 @@
 /* ## Entries
 --------------------------------------------- */
 .entry {
-    padding: 5px;
-    margin-bottom: 50px;
-    @include media($small-screen-up) {
-        padding: 20px;
-    }
+	padding: 5px;
+	margin-bottom: 50px;
+	@include media($small-screen-up) {
+			padding: 20px;
+	}
 }
 
 .content .entry {
-    background-color: $entry_bg_color; 
+	background-color: $entry_bg_color;
 }
 
 .entry-content ol,
 .entry-content ul {
-    margin-bottom: $paragraph_margin;
-    margin-left: 40px; 
+	margin-bottom: $paragraph_margin;
+	margin-left: 40px; 
 }
 
 .entry-content ol > li {
-    list-style-type: decimal; 
+	list-style-type: decimal; 
 }
 
 .entry-content ul > li {
-    list-style-type: disc; 
+	list-style-type: disc; 
 }
 
 .entry-content ol ol,
 .entry-content ul ul {
-    margin-bottom: 0; 
+	margin-bottom: 0; 
 }
 
 .entry-content code {
-    background-color: #333;
-    color: #ddd; 
+	background-color: #333;
+	color: #ddd; 
 }

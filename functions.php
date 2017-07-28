@@ -27,7 +27,7 @@ include_once( __DIR__ . '/lib/genesis-edits.php' );
 
 //* Add ACF theme content
 if( class_exists('acf') ) { 
-    include_once( __DIR__ . '/lib/theme-extras.php' );
+	include_once( __DIR__ . '/lib/theme-extras.php' );
 }
 
 

@@ -1,21 +1,21 @@
 /* ## Typographical Elements
 --------------------------------------------- */
 html {
-  font-size: 62.5%;
-  /* 10px browser default */ 
+	font-size: 62.5%;
+	/* 10px browser default */ 
 }
 
 body {
-  background-color: $body_bg_color;
-  color: $font_color;
-  font-family: $base_font;
-  @include font-size($base_font_size);
-  @include media($small-screen-up) {
-      @include font-size($base_large_font_size);
-  }
-  font-weight: $base_font_weight;
-  line-height: $base_line_height;
-  margin: 0; 
+	background-color: $body_bg_color;
+	color: $font_color;
+	font-family: $base_font;
+	@include font-size($base_font_size);
+	@include media($small-screen-up) {
+		@include font-size($base_large_font_size);
+	}
+	font-weight: $base_font_weight;
+	line-height: $base_line_height;
+	margin: 0; 
 }
 
 a,
@@ -27,45 +27,45 @@ input[type="submit"],
 textarea:focus,
 .button,
 .gallery img {
-  -webkit-transition: all 0.1s ease-in-out;
-  -moz-transition: all 0.1s ease-in-out;
-  -ms-transition: all 0.1s ease-in-out;
-  -o-transition: all 0.1s ease-in-out;
-  transition: all 0.1s ease-in-out; 
+	-webkit-transition: all 0.1s ease-in-out;
+	-moz-transition: all 0.1s ease-in-out;
+	-ms-transition: all 0.1s ease-in-out;
+	-o-transition: all 0.1s ease-in-out;
+	transition: all 0.1s ease-in-out; 
 }
 
 a {
-  color: $accent_color;
-  text-decoration: none; 
+	color: $accent_color;
+	text-decoration: none; 
 }
 
 a:hover,
 a:focus {
-  color: $accent_light_color;
-  text-decoration: none; 
+	color: $accent_light_color;
+	text-decoration: none; 
 }
 
 p {
-  margin: 0 0 $paragraph_margin;
-  padding: 0; 
+	margin: 0 0 $paragraph_margin;
+	padding: 0; 
 }
-
+	
 hr {
-  border: 0;
-  border-collapse: collapse;
-  border-top: 1px solid $subtle_color;
-  clear: both;
-  margin: 1em 0; 
+	border: 0;
+	border-collapse: collapse;
+	border-top: 1px solid $subtle_color;
+	clear: both;
+	margin: 1em 0; 
 }
 
 b,
 strong {
-  font-weight: $bold_font_weight; 
+	font-weight: $bold_font_weight; 
 }
 
 blockquote,
 cite,
 em,
 i {
-  font-style: italic; 
+	font-style: italic; 
 }

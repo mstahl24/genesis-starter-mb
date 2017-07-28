@@ -3,29 +3,29 @@
 
 
 .nav-primary {
-    background-color: $primarynav_bg_color;
-    text-align: center;
+	background-color: $primarynav_bg_color;
+	text-align: center;
 }
 
 .nav-primary .genesis-nav-menu a {
-    color: $primarynav_link_color;
-    text-decoration: none; 
+	color: $primarynav_link_color;
+	text-decoration: none; 
 }
 
 .nav-primary .genesis-nav-menu a:hover,
 .nav-primary .genesis-nav-menu a:focus,
 .nav-primary .genesis-nav-menu .current-menu-item > a {
-    color: $primarynav_hover_color;
-    text-decoration: none; 
+	color: $primarynav_hover_color;
+	text-decoration: none; 
 }
 
 .nav-primary .genesis-nav-menu .sub-menu a {
-    color: $primarynav_link_color; 
+	color: $primarynav_link_color; 
 }
 
 .nav-primary .genesis-nav-menu .sub-menu a:hover,
 .nav-primary .genesis-nav-menu .sub-menu a:focus,
 .nav-primary .genesis-nav-menu .sub-menu .current-menu-item > a {
-    color: $accent_color;
-    text-decoration: none; 
+	color: $accent_color;
+	text-decoration: none; 
 }

@@ -7,8 +7,8 @@
 add_filter('body_class', 'mbird_home_body_class');
 function mbird_home_body_class($classes) {
 
-    $classes[] = 'homepage';
-    return $classes;
+	$classes[] = 'homepage';
+	return $classes;
 }
 
 //* Force full-width-content layout setting

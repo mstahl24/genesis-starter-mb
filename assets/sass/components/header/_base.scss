@@ -1,13 +1,17 @@
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
-  background-color: $header_bg_color;
+	background-color: $header_bg_color;
 }
 
 .site-header .wrap {
-  padding: 14px 2%; 
+	padding: 14px $wrap_side_padding_mobile; 
 
-  @include media($large-screen-up) {
-    padding: 40px 0; 
-  }
+	@include media($medium-screen-up) {
+	padding: 20px $wrap_side_padding; 
+	}
+
+	@include media($large-screen-up) {
+	padding: 40px 0; 
+	}
 }

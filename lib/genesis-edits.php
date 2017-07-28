@@ -42,16 +42,17 @@ function mbird_disable_superfish() {
 //* [Site-wide] Modify the Excerpt read more link
 add_filter('excerpt_more', 'mbird_new_excerpt_more');
 function mbird_new_excerpt_more($more) {
-    return '... <a class="more-link" href="' . get_permalink() . '">Read More</a>';
+	return '... <a class="more-link" href="' . get_permalink() . '">Read More</a>';
 }
 
 //* Customize the post meta function
 add_filter( 'genesis_post_meta', 'mbird_post_meta_filter' );
 function mbird_post_meta_filter($post_meta) {
-if ( !is_page() ) {
-	$post_meta = '[post_categories before="Categories: "] [post_tags before="Tags: "]';
-	return $post_meta;
-}}
+	if ( !is_page() ) {
+		$post_meta = '[post_categories before="Categories: "] [post_tags before="Tags: "]';
+		return $post_meta;
+	}
+}
 
 
 //* Add standard content editor back to posts page

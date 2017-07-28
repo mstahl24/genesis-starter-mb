@@ -14,8 +14,9 @@
 .site-header:before,
 .site-inner:before,
 .wrap:before {
-  content: " ";
-  display: table; }
+	content: " ";
+	display: table;
+}
 
 .author-box:after,
 .clearfix:after,
@@ -31,6 +32,7 @@
 .site-header:after,
 .site-inner:after,
 .wrap:after {
-  clear: both;
-  content: " ";
-  display: table; }
+	clear: both;
+	content: " ";
+	display: table;
+}

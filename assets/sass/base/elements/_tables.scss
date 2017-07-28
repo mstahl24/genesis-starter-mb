@@ -1,22 +1,27 @@
 /* ## Tables
 --------------------------------------------- */
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  line-height: 2;
-  margin-bottom: 40px;
-  width: 100%; }
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 2;
+	margin-bottom: 40px;
+	width: 100%;
+}
 
 tbody {
-  border-bottom: 1px solid $subtle_color; }
+	border-bottom: 1px solid $subtle_color;
+}
 
 td,
 th {
-  text-align: left; }
+	text-align: left;
+}
 
 td {
-  border-top: 1px solid $subtle_color;
-  padding: 6px 0; }
+	border-top: 1px solid $subtle_color;
+	padding: 6px 0;
+}
 
 th {
-  font-weight: 400; }
+	font-weight: 400;
+}

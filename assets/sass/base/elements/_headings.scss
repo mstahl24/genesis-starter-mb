@@ -6,44 +6,47 @@ h3,
 h4,
 h5,
 h6 {
-  color: $title_color;
-  font-family: $title_font;
-  font-weight: $title_weight;
-  line-height: 1.2;
-  margin: 0 0 10px;
-  text-transform: $title_text_transform;
+	color: $title_color;
+	font-family: $title_font;
+	font-weight: $title_weight;
+	line-height: 1.2;
+	margin: 0 0 10px;
+	text-transform: $title_text_transform;
 }
 
 h1 {
-  @include font-size($h1_font_size);
-  
-  @include media($small-screen-up) {
-      @include font-size($h1_large_font_size);
-  }
+	@include font-size($h1_font_size);
+	
+	@include media($small-screen-up) {
+			@include font-size($h1_large_font_size);
+	}
 }
 
 h2 {
-  font-family: $h2_font;
-  @include font-size($h2_font_size);
-  @include media($small-screen-up) {
-      @include font-size($h2_large_font_size);
-  }
-  font-weight: $h2_font_weight;
-  text-transform: $h2_text_transform;
+	font-family: $h2_font;
+	@include font-size($h2_font_size);
+	@include media($small-screen-up) {
+			@include font-size($h2_large_font_size);
+	}
+	font-weight: $h2_font_weight;
+	text-transform: $h2_text_transform;
 }
 
 h3 {
-  @include font-size($h3_font_size); 
+	@include font-size($h3_font_size); 
+	@include media($small-screen-up) {
+			@include font-size($h3_large_font_size);
+	}
 }
 
 h4 {
-  @include font-size($h4_font_size);
+	@include font-size($h4_font_size);
 }
 
 h5 {
-  @include font-size($h5_font_size);
+	@include font-size($h5_font_size);
 }
 
 h6 {
-  @include font-size($h6_font_size);
+	@include font-size($h6_font_size);
 }

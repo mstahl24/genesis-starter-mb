@@ -1,52 +1,52 @@
 /* ### Full Width Content */
 .full .site-inner {
-    max-width: none;
-    padding-top: 0;
-    padding-left: 0;
-    padding-right: 0; 
+	max-width: none;
+	padding-top: 0;
+	padding-left: 0;
+	padding-right: 0; 
 }
 
 .full .entry {
-    margin-bottom: 60px;
-    padding: 0; 
+	margin-bottom: 60px;
+	padding: 0; 
 }
 
 .full h1::after {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .head-margin {
-    margin-top: 40px;
+	margin-top: 40px;
 }
 
 .hero {
-    background-position: center;
-    background-size: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: $hero_img_height_mobile;
-    padding: $hero_padding_mobile;
-    
-    @include media($medium-screen-up) {
-        min-height: $hero_img_height;
-        padding: $hero_padding;
-    }
+	background-position: center;
+	background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: $hero_img_height_mobile;
+	padding: $hero_padding_mobile;
+	
+	@include media($medium-screen-up) {
+		min-height: $hero_img_height;
+		padding: $hero_padding;
+	}
 }
 
 .centered {
-    text-align: center;
+	text-align: center;
 }
 
 /* Flex Layout */
 .stripe {
-    padding: $stripe_padding_mobile;
-    @include media($small-screen-up) {
-      padding: $stripe_padding;
+	padding: $stripe_padding_mobile;
+	@include media($small-screen-up) {
+	  padding: $stripe_padding;
   }
 }
 
 .flex-plain {
-    padding-left: 0;
-    padding-right: 0;
+	padding-left: 0;
+	padding-right: 0;
 }

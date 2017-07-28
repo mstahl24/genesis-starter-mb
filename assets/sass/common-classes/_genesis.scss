@@ -3,15 +3,17 @@
 
 .archive-description,
 .author-box {
-  @include font-size($base_font_size)
-  margin-bottom: 40px;
+	@include font-size($base_font_size)
+	margin-bottom: 40px;
 }
 
 .author-box-title {
-  @include font-size($h5_font_size);
-  font-weight: $bold_font_weight;
-  margin-bottom: 4px; }
+	@include font-size($h5_font_size);
+	font-weight: $bold_font_weight;
+	margin-bottom: 4px;
+}
 
 .archive-description p:last-of-type,
 .author-box p:last-of-type {
-  margin-bottom: 0; }
+	margin-bottom: 0;
+}

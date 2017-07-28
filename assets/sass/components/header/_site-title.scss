@@ -1,59 +1,60 @@
 /* ## Title Area
 --------------------------------------------- */
 .title-area {
-  float: left;
-  padding: 0 10px 0 0;
-  width: 50%;
-  
-  @include media($medium-screen-up) {
-      width: $logo_width;
-  }
+	float: left;
+	padding: 0 10px 0 0;
+	width: 50%;
+	
+	@include media($medium-screen-up) {
+			width: $logo_area_width;
+	}
 }
 
 .site-title {
-  font-family: $h2_font;
-  @include font-size(30);
-  font-weight: 200;
-  line-height: 1.2; 
-  text-transform: none;
+	font-family: $h2_font;
+	@include font-size(30);
+	font-weight: 200;
+	line-height: 1.2; 
+	text-transform: none;
 }
 
 .site-title a,
 .site-title a:hover,
 .site-title a:focus {
-  color: $main_color; 
+	color: $main_color; 
 }
 
 .header-image .site-title > a {
-  background: url(./assets/images/logo.png) no-repeat;
-  /* background: url(./assets/images/logo.svg) no-repeat; */
-  background-position: left center;
-  background-size: contain;
-  float: left;
-  min-height: 60px;
-  width: 100%;
-  
-  @include media($medium-screen-up) {
-      background-position: left center;
-      min-height: $logo_height;
-  }
+	background: url(./assets/images/logo.png) no-repeat;
+	/* background: url(./assets/images/logo.svg) no-repeat; */
+	background-position: left center;
+	background-size: contain;
+	float: left;
+	min-height: 60px;
+	width: 100%;
+	
+	@include media($medium-screen-up) {
+			background-position: left center;
+			min-height: $logo_height;
+			width: $logo_width;
+	}
 }
 
 .site-description {
-  color: $alternate_color;
-  @include font-size(16);
-  font-weight: 700;
-  line-height: 1.4; 
-  text-transform: uppercase;
+	color: $alternate_color;
+	@include font-size(16);
+	font-weight: 700;
+	line-height: 1.4; 
+	text-transform: uppercase;
 }
 
 .site-description,
 .site-title {
-  margin-bottom: 0; 
+	margin-bottom: 0; 
 }
 
 .header-image .site-description,
 .header-image .site-title {
-  display: block;
-  text-indent: -9999px; 
+	display: block;
+	text-indent: -9999px; 
 }
