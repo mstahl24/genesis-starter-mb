@@ -14,6 +14,7 @@ var gulp = require('gulp'),
 	sasslint = require('gulp-sass-lint'),
 	uglifyjs = require('gulp-uglify'),
 	moduleimporter = require('sass-module-importer'),
+	removecomments = require('postcss-discard-comments'),
 	
 	// Utilities
 	rename = require('gulp-rename'),
@@ -94,7 +95,8 @@ gulp.task('css:minify', ['postcss'], function() {
 		}))
 			
 		.pipe( cssminify({
-			safe: true
+			safe: true,
+			discardComments: {removeAll: true}
 		}))
 		.pipe(rename('style.min.css'))
 		.pipe(gulp.dest('./'))

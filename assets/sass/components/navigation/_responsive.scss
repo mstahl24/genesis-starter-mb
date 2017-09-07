@@ -3,10 +3,12 @@
 .responsive-menu-icon {
 	cursor: pointer;
 	display: none;
-	width: 40px;
+	width: 200px;
 	height: 40px;
 	margin: 0 auto;
 	position: relative; 
+	overflow: hidden;
+	line-height: 1.5;
 }
 
 .responsive-menu-icon:before {

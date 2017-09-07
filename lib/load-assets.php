@@ -24,7 +24,7 @@ function mbird_enqueue_assets() {
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700', array(), CHILD_THEME_VERSION);
 	
 	// Font Awesome Icons
-	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
+	wp_enqueue_style( 'font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', array(), CHILD_THEME_VERSION );
 
 	// Responsive Menu
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_THEME_DIR . '/assets/js/theme-scripts.min.js', array('jquery'), CHILD_THEME_VERSION, true);
