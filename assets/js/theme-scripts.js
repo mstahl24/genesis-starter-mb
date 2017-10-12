@@ -10,13 +10,23 @@ jQuery(function($) {
     $(window).resize(function() {
         if (window.innerWidth > 1024) {
             $("header .genesis-nav-menu, .nav-primary .genesis-nav-menu, .nav-secondary .genesis-nav-menu, nav .sub-menu").removeAttr("style");
-            $(".responsive-menu > .menu-item").removeClass("menu-open");
+            $(".responsive-menu > .menu-item, .responsive-menu > .menu-item > .sub-menu  > .menu-item").removeClass("menu-open");
         }
     });
+
+
     $(".responsive-menu > .menu-item").click(function(event) {
         if (event.target !== this) return;
         $(this).find(".sub-menu:first").slideToggle(function() {
             $(this).parent().toggleClass("menu-open");
         });
     });
+
+
+    $(".sub-menu .menu-item").click(function(event) {
+        $(this).find(".sub-menu:first").slideToggle(function() {
+            $(this).parent().toggleClass("menu-open");
+        });
+    });
+
 });

@@ -270,7 +270,7 @@ function mbird_display_office_info_shortcode( $atts ) {
 		// Return custom embed code
 		return '
 		<div itemscope itemtype="http://schema.org/LegalService" class="loc-schema">
-			<img src="/wp-content/themes/assets/images/logo.png" itemprop="image" alt="'.$loc_name.' logo" />
+			<img src="/wp-content/themes/'.CHILD_TEXT_DOMAIN.'/assets/images/logo.png" itemprop="image" alt="'.$loc_name.' logo" />
 			<span itemprop="name">'.$loc_name.'</span>
 			<div itemscope itemprop="address" itemtype="http://schema.org/PostalAddress">
 				<p><span itemprop="streetAddress">'.$loc_street.'</span><br />
@@ -310,19 +310,19 @@ function mbird_social_media_links_shortcode() {
 		
 		
 		if ( get_field( 'theme_facebook', 'option' ) ) {
-			$facebook_link = '<a href="'. get_field( 'theme_facebook', 'option' ) .'" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>';
+			$facebook_link = '<a href="'. get_field( 'theme_facebook', 'option' ) .'" target="_blank"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>';
 		}
 		if ( get_field( 'theme_twitter', 'option' ) ) {
-			$twitter_link = '<a href="'. get_field( 'theme_twitter', 'option' ) .'" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>';
+			$twitter_link = '<a href="'. get_field( 'theme_twitter', 'option' ) .'" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>';
 		}
 		if ( get_field( 'theme_linkedin', 'option' ) ) {
-			$linkedin_link = '<a href="'. get_field( 'theme_linkedin', 'option' ) .'" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>';
+			$linkedin_link = '<a href="'. get_field( 'theme_linkedin', 'option' ) .'" target="_blank"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>';
 		}
 		if ( get_field( 'theme_google', 'option' ) ) {
-			$googleplus_link = '<a href="'. get_field( 'theme_google', 'option' ) .'" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>';
+			$googleplus_link = '<a href="'. get_field( 'theme_google', 'option' ) .'" target="_blank"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>';
 		}
 		if ( get_field( 'theme_youtube', 'option' ) ) {
-			$youtube_link = '<a href="'. get_field( 'theme_youtube', 'option' ) .'" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>';
+			$youtube_link = '<a href="'. get_field( 'theme_youtube', 'option' ) .'" target="_blank"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>';
 		}
 
 		return '<p class="social-links">

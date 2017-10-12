@@ -1,11 +1,15 @@
 /* ## Entries
 --------------------------------------------- */
 .entry {
+	/*
 	padding: 5px;
+	*/
 	margin-bottom: 50px;
+	/*
 	@include media($small-screen-up) {
 			padding: 20px;
 	}
+	*/
 }
 
 .content .entry {

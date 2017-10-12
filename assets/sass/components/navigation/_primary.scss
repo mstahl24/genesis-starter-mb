@@ -5,6 +5,21 @@
 .nav-primary {
 	background-color: $primarynav_bg_color;
 	text-align: center;
+
+	/* Wide Nav Flex Wrap Option */
+
+	/*
+	.wrap {
+		max-width: 1920px;
+	}
+	@include media($medium-screen-up) {
+		.menu {
+			display: flex;
+			justify-content: space-around;
+			@include font-size(17);
+		}
+	}
+	*/
 }
 
 .nav-primary .genesis-nav-menu a {

@@ -22,8 +22,8 @@
 
 .site-inner {
 	clear: both;
-	padding-top: 10px;
+	padding-top: 30px;
 	@include media($small-screen-up) {
-		padding-top: 30px;
+		padding-top: 50px;
 	}
 }

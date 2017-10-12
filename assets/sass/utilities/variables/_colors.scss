@@ -40,13 +40,15 @@ $nav_bg_color: $main_color;
 $nav_link_color: $white;
 $nav_hover_color: $accent_color;
 
-$primarynav_bg_color: $secondary_color;
-$primarynav_link_color: $white;
-$primarynav_hover_color: $accent_color;
+$subnav_border_color: $white;
+
+$primarynav_bg_color: $nav_bg_color;
+$primarynav_link_color: $nav_link_color;
+$primarynav_hover_color: $nav_hover_color;
 
 $secondarynav_bg_color: $alternate_color;
-$secondarynav_link_color: $white;
-$secondarynav_hover_color: $accent_color;
+$secondarynav_link_color: $nav_link_color;
+$secondarynav_hover_color: $nav_hover_color;
 
 $reponsivenav_link_color: $white;
 $reponsivenav_hover_color: $white;
