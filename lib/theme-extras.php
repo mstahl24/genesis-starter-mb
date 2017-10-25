@@ -334,3 +334,46 @@ function mbird_social_media_links_shortcode() {
 		</p>';
 
 }
+
+
+
+
+
+
+
+
+// The code blocks below are to create a genesis setting page text box for the gtm script that goes below the opening body tag
+
+
+
+// Field defaults for text box - Google Tag Manager after opening body code
+function mbird_gtm_body_defaults( $defaults ) {
+	$defaults['gtm_body_code'] = '';
+	return $defaults;
+}
+add_filter( 'genesis_theme_settings_defaults', 'mbird_gtm_body_defaults' );
+
+
+// Register GTM boxy settings box on genesis settings page
+function mbird_register_gtm_body_settings_box( $_genesis_theme_settings_pagehook ) {
+	add_meta_box( 'mbird-gtm-body-box', 'Google Tag Manager', 'mbird_gtm_body_box', $_genesis_theme_settings_pagehook, 'main' );
+}
+add_action( 'genesis_theme_settings_metaboxes', 'mbird_register_gtm_body_settings_box' );
+
+
+// Register the GTM text area - opening body
+function mbird_gtm_body_box() {
+	?>
+
+	<p>Immediately After Opening Body Tag Script: <br />
+	<textarea class="large-text" rows="8" cols="78" name="<?php echo GENESIS_SETTINGS_FIELD; ?>[gtm_body_code]"><?php echo genesis_get_option('gtm_body_code'); ?></textarea></p>
+
+	<?php
+}
+
+
+// Insert Google tag field after opening body
+add_action( 'genesis_before', 'mbird_insert_google_tag');
+function mbird_insert_google_tag() {
+    echo genesis_get_option('gtm_body_code');
+}
